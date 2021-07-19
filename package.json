@@ -1,6 +1,6 @@
 {
   "name": "cbingbing-lerna-demo",
-  "private": true,
+  "private": false,
   "workspaces": [
     "packages/*"
   ],
