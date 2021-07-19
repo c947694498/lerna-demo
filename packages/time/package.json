@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/c947694498/lerna-demo/issues"
   },
-  "homepage": "https://github.com/c947694498/lerna-demo#readme"
+  "homepage": "https://github.com/c947694498/lerna-demo#readme",
+  "gitHead": "051a3ffa7da266d80116fa849b695ac1ac367819",
+  "publishConfig": {
+    "access": "public"
+  }
 }
