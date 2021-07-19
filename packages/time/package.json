@@ -1,0 +1,22 @@
+{
+  "name": "time",
+  "version": "0.0.0",
+  "description": "time",
+  "keywords": [],
+  "author": "cbb <947694498@qq.com>",
+  "license": "ISC",
+  "main": "lib/time.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://r.cnpmjs.org/"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}
