@@ -1,5 +1,5 @@
 {
-  "name": "lerna-demo",
+  "name": "cbingbing-lerna-demo",
   "private": false,
   "scripts": {
     "create": "node scripts/create.js",
