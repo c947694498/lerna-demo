@@ -1,6 +1,9 @@
 {
   "name": "cbingbing-lerna-demo",
   "private": false,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "create": "node scripts/create.js",
     "build": "node scripts/build.js"
