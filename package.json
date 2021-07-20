@@ -1,6 +1,5 @@
 {
   "name": "pocketjs",
-  "private": true,
   "workspaces": [
     "packages/*"
   ],
