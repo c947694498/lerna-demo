@@ -30,11 +30,23 @@ function createOptions(pkgName) {
   };
 
   // 输出的配置
-  const outputOptions = {
-    file: `${packDir}/lib/${pkgName}.js`,
-    format: 'esm',  // 引出的方式为es6的方式
-    name: `${pkgName}` // 输出可引用名为package的名字
-  };
+  const outputOptions = [
+    {
+      file: `${packDir}/lib/${pkgName}.esm.js`,
+      format: 'esm',
+      name: `${pkgName}`
+    },
+    {
+      file: `${packDir}/lib/${pkgName}.cjs.js`,
+      format: 'cjs',
+      name: `${pkgName}`
+    },
+    {
+      file: `${packDir}/lib/${pkgName}.umd.js`,
+      format: 'umd',
+      name: `${pkgName}`
+    }
+  ];
 
   return { inputOptions, outputOptions }
 }
@@ -56,7 +68,10 @@ async function build(pkgName) {
 
   console.log(bundle.watchFiles); // an array of file names this bundle depends on
 
-  await bundle.write(outputOptions); // outputOptions放在这里
+  outputOptions.map(async outOpt => {
+    await bundle.write(outOpt)
+  })
+  // await bundle.write(outputOptions); // outputOptions放在这里
 }
 
 /**

@@ -1,6 +1,8 @@
 
 import delay from './delay';
 
-export default {
+const time = {
   delay
 }
+
+export default time

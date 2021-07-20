@@ -1,0 +1,1 @@
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).time=t()}(this,(function(){"use strict";return{delay:function(e){return new Promise((t=>setTimeout(t,e)))}}}));
