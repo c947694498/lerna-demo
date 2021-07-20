@@ -29,5 +29,8 @@
   "gitHead": "03454eb69fc19e697a10e8e2017ce42a4864877b",
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.5"
   }
 }

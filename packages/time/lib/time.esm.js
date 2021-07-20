@@ -1,1 +1,7 @@
-const e={delay:function(e){return new Promise((t=>setTimeout(t,e)))}};export default e;
+var delay = function (ms) { return new Promise(function (resolve) { return setTimeout(resolve, ms); }); };
+
+var time = {
+    delay: delay
+};
+
+export { time };

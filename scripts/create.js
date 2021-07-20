@@ -25,15 +25,13 @@ if (createSh.code !== 0) {
 } else {
   fs.rmdirSync(resolvePkg('lib'), { recursive: true, force: true })
   fs.mkdirSync(resolvePkg('src'))
-  fs.writeFileSync(resolvePkg('src/index.js'), '')
-  let pkgJSON = JSON.parse(
-    fs.readFileSync(resolvePkg('package.json'))
-  )
+  fs.writeFileSync(resolvePkg('src/index.ts'), '')
+  let pkgJSON = JSON.parse(fs.readFileSync(resolvePkg('package.json')))
   pkgJSON.main = `lib/${pkgName}.cjs.js`
   pkgJSON.module = `lib/${pkgName}.esm.js`
   pkgJSON.browser = `lib/${pkgName}.umd.js`
   pkgJSON.publishConfig = {
-    "access": "public"
+    access: 'public'
   }
   fs.writeFileSync(resolvePkg('package.json'), JSON.stringify(pkgJSON, null, 2))
   echo(`create ${pkgName} success`)
