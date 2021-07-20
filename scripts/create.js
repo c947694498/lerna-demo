@@ -1,6 +1,7 @@
-const { echo, exec, exit, cd, mkdir, touch } = require('shelljs')
+const { echo, exec, exit } = require('shelljs')
 const { resolve } = require('path')
 const isPkgExist = require('./utils/isPkgExist')
+const fs = require('fs')
 const pkgName = process.argv[2] // 拿到 npm run build packName 中的packName
 
 if (!pkgName) {
@@ -10,6 +11,7 @@ if (!pkgName) {
 
 const rootPath = process.cwd()
 const pkgNamePath = resolve(rootPath, 'packages', pkgName)
+const resolvePkg = (...dir) => resolve(pkgNamePath, ...dir)
 
 if (isPkgExist(pkgName)) {
   echo(`${pkgName} 包已存在`)
@@ -21,9 +23,18 @@ if (createSh.code !== 0) {
   echo('create fail')
   exit(1)
 } else {
-  cd(pkgNamePath)
-  mkdir(`src`)
-  cd('src')
-  touch(`index.js`)
+  fs.rmdirSync(resolvePkg('lib'), { recursive: true, force: true })
+  fs.mkdirSync(resolvePkg('src'))
+  fs.writeFileSync(resolvePkg('src/index.js'), '')
+  let pkgJSON = JSON.parse(
+    fs.readFileSync(resolvePkg('package.json'))
+  )
+  pkgJSON.main = `lib/${pkgName}.cjs.js`
+  pkgJSON.module = `lib/${pkgName}.esm.js`
+  pkgJSON.browser = `lib/${pkgName}.umd.js`
+  pkgJSON.publishConfig = {
+    "access": "public"
+  }
+  fs.writeFileSync(resolvePkg('package.json'), JSON.stringify(pkgJSON, null, 2))
   echo(`create ${pkgName} success`)
 }
