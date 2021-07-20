@@ -1,5 +1,5 @@
 {
-  "name": "cbingbing",
+  "name": "procketjs",
   "workspaces": [
     "packages/*"
   ],
