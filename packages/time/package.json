@@ -1,5 +1,5 @@
 {
-  "name": "@pocketjs/time",
+  "name": "@cbingbing/time",
   "version": "0.0.14",
   "description": "time",
   "keywords": [],
@@ -24,7 +24,7 @@
     "url": "https://github.com/c947694498/lerna-demo/issues"
   },
   "homepage": "https://github.com/c947694498/lerna-demo#readme",
-  "gitHead": "c5b0e7a03bdb5e2fb3843870202a9509063329a6",
+  "gitHead": "03454eb69fc19e697a10e8e2017ce42a4864877b",
   "publishConfig": {
     "access": "public"
   }
