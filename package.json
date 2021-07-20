@@ -6,7 +6,7 @@
   "scripts": {
     "create": "node scripts/create.js",
     "build": "node scripts/build.js",
-    "publish": "lerna publish"
+    "publish": "npm run build && lerna publish"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
